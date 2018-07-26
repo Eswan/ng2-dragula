@@ -179,7 +179,7 @@ export class DragulaService {
         return;
       }
       dragElm = el;
-      dragIndex = this.domIndexOf(el, source);
+      dragIndex = dragIndex = el.getAttribute("dragula-index") ? +el.getAttribute("dragula-index") : this.domIndexOf(el, source);
     });
     drake.on('drop', (dropElm: any, target: Element, source: Element, sibling?: Element) => {
       if (!drake.models || !target) {
